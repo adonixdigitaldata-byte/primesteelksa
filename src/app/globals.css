@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --font-outfit: 'Outfit', sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+    background-color: #05060a; /* brand-surface */
+    color: #e2e8f0; /* brand-muted / light slate */
+  }
+  body {
+    overflow-x: hidden;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05060a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1d29;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d97706; /* brand-primary */
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-outfit), var(--font-inter), sans-serif;
+  }
+  
+  .molten-text {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #b45309 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(217, 119, 6, 0.1);
+  }
+
+  .glass-panel {
+    background: rgba(11, 13, 20, 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-panel-hover:hover {
+    background: rgba(18, 21, 32, 0.9);
+    border-color: rgba(217, 119, 6, 0.35);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(217, 119, 6, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .laser-border {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease;
+  }
+
+  .laser-border:hover {
+    border-color: rgba(217, 119, 6, 0.4);
+  }
+
+  .text-glow-amber {
+    text-shadow: 0 0 20px rgba(217, 119, 6, 0.4);
+  }
+}
+
+/* RTL Specific Overrides for smooth transitions */
+html[dir="rtl"] .rtl-mirror {
+  transform: scaleX(-1);
+}
+
+/* Custom fade-in animations on mount */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
