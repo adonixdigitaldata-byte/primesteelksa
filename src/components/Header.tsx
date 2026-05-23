@@ -51,11 +51,11 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <img src="/primesteelLogo.png" alt="PrimeSteelKSA Logo" className="w-14 h-14 object-contain"/>
+              <img src="/primesteelLogo.png" alt="PrimeSteelKSA Logo" className="w-20 h-20 object-contain"/>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors duration-300 font-display">
                   PrimeSteel<span className="text-brand-primary">KSA</span>
