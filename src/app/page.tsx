@@ -204,76 +204,78 @@ export default function Home() {
               key={prod.id}
               className="glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between group"
             >
-              {/* Product Visual */}
-              <div className="h-48 bg-gradient-to-br from-brand-surface-alt to-brand-surface-mid/45 relative flex items-center justify-center p-6 border-b border-white/5 overflow-hidden">
-                {prod.image ? (
-                  <img src={prod.image} alt={prod.nameEn} className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-500 group-hover:scale-105" />
-                ) : (
-                  <>
-                    <div className="absolute inset-0 bg-hero-pattern opacity-[0.05] group-hover:opacity-10 transition-opacity z-0"></div>
-                    {/* Structural abstract design */}
-                    <div className="relative z-10 w-24 h-24 bg-brand-surface-mid border border-white/10 rounded-xl flex items-center justify-center shadow-card group-hover:scale-105 group-hover:border-brand-primary/50 transition-all duration-300">
-                      <span className="text-brand-primary text-xs font-mono font-bold tracking-widest">{prod.sku}</span>
-                    </div>
-                  </>
-                )}
-                {/* Standard quality tag */}
-                <div className="absolute top-3 left-3 bg-[#05060a]/80 backdrop-blur border border-white/10 px-2.5 py-1 rounded-md text-[10px] font-bold text-brand-primary flex items-center gap-1">
-                  <Star className="w-3 h-3 fill-current" />
-                  <span>JIS / ASTM</span>
-                </div>
-              </div>
-
-              {/* Card Content */}
-              <div className="p-6 space-y-5 flex-grow flex flex-col justify-between">
-                <div className="space-y-2.5">
-                  <div className="text-[10px] text-brand-primary font-bold uppercase tracking-widest">
-                    {language === 'ar' ? prod.categoryAr : prod.categoryEn}
-                  </div>
-                  <h3 className="text-base font-bold text-white line-clamp-2 min-h-[48px] group-hover:text-brand-primary transition-colors leading-snug">
-                    {language === 'ar' ? prod.nameAr : prod.nameEn}
-                  </h3>
-                </div>
-
-                {/* Technical blueprint specifications box */}
-                <div className="bg-[#05060a]/50 p-4 rounded-xl border border-white/5 space-y-2 text-xs text-brand-muted">
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold text-brand-muted/75">{t.prodMaterial}:</span>
-                    <span className="text-white font-bold">{language === 'ar' ? prod.materialAr : prod.materialEn}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold text-brand-muted/75">{t.prodGrade}:</span>
-                    <span className="text-white font-bold">{language === 'ar' ? prod.gradeAr : prod.gradeEn}</span>
-                  </div>
-                </div>
-
-                {/* Actions CTA buttons */}
-                <div className="flex flex-col gap-2.5 pt-1">
-                  <Link
-                    href={`/products/${prod.id}`}
-                    className="w-full py-2.5 bg-brand-surface-mid/80 hover:bg-brand-surface-mid text-white font-bold rounded-xl text-xs transition-colors duration-200 border border-white/10 text-center block"
-                  >
-                    {t.prodBtnDetails}
-                  </Link>
-
-                  {isInBasket(prod.id) ? (
-                    <button
-                      onClick={() => removeFromBasket(prod.id)}
-                      className="w-full py-2.5 bg-brand-rust/10 border border-brand-rust/30 text-brand-rust hover:bg-brand-rust/20 font-bold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
-                    >
-                      <Check className="w-3.5 h-3.5" />
-                      <span>{t.prodBtnRemoveFromBasket}</span>
-                    </button>
+              <Link href={`/products/${prod.id}`} className="block flex-grow flex flex-col">
+                {/* Product Visual */}
+                <div className="h-48 bg-gradient-to-br from-brand-surface-alt to-brand-surface-mid/45 relative flex items-center justify-center p-6 border-b border-white/5 overflow-hidden">
+                  {prod.image ? (
+                    <img src={prod.image} alt={prod.nameEn} className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-500 group-hover:scale-105" />
                   ) : (
-                    <button
-                      onClick={() => addToBasket(prod)}
-                      className="w-full py-2.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
-                    >
-                      <Plus className="w-3.5 h-3.5" />
-                      <span>{t.prodBtnAddToBasket}</span>
-                    </button>
+                    <>
+                      <div className="absolute inset-0 bg-hero-pattern opacity-[0.05] group-hover:opacity-10 transition-opacity z-0"></div>
+                      {/* Structural abstract design */}
+                      <div className="relative z-10 w-24 h-24 bg-brand-surface-mid border border-white/10 rounded-xl flex items-center justify-center shadow-card group-hover:scale-105 group-hover:border-brand-primary/50 transition-all duration-300">
+                        <span className="text-brand-primary text-xs font-mono font-bold tracking-widest">{prod.sku}</span>
+                      </div>
+                    </>
                   )}
+                  {/* Standard quality tag */}
+                  <div className="absolute top-3 left-3 bg-[#05060a]/80 backdrop-blur border border-white/10 px-2.5 py-1 rounded-md text-[10px] font-bold text-brand-primary flex items-center gap-1">
+                    <Star className="w-3 h-3 fill-current" />
+                    <span>JIS / ASTM</span>
+                  </div>
                 </div>
+
+                {/* Card Content */}
+                <div className="p-6 space-y-5 flex-grow flex flex-col justify-between">
+                  <div className="space-y-2.5">
+                    <div className="text-[10px] text-brand-primary font-bold uppercase tracking-widest">
+                      {language === 'ar' ? prod.categoryAr : prod.categoryEn}
+                    </div>
+                    <h3 className="text-base font-bold text-white line-clamp-2 min-h-[48px] group-hover:text-brand-primary transition-colors leading-snug">
+                      {language === 'ar' ? prod.nameAr : prod.nameEn}
+                    </h3>
+                  </div>
+
+                  {/* Technical blueprint specifications box */}
+                  <div className="bg-[#05060a]/50 p-4 rounded-xl border border-white/5 space-y-2 text-xs text-brand-muted">
+                    <div className="flex justify-between items-start gap-4 text-left rtl:text-right">
+                      <span className="font-semibold text-brand-muted/75 shrink-0">{t.prodMaterial}:</span>
+                      <span className="text-white font-bold text-right rtl:text-left break-words">{language === 'ar' ? prod.materialAr : prod.materialEn}</span>
+                    </div>
+                    <div className="flex justify-between items-start gap-4 text-left rtl:text-right">
+                      <span className="font-semibold text-brand-muted/75 shrink-0">{t.prodGrade}:</span>
+                      <span className="text-white font-bold text-right rtl:text-left break-words">{language === 'ar' ? prod.gradeAr : prod.gradeEn}</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Actions CTA buttons */}
+              <div className="px-6 pb-6 pt-0 flex flex-col gap-2.5">
+                <Link
+                  href={`/products/${prod.id}`}
+                  className="w-full py-2.5 bg-brand-surface-mid/80 hover:bg-brand-surface-mid text-white font-bold rounded-xl text-xs transition-colors duration-200 border border-white/10 text-center block"
+                >
+                  {t.prodBtnDetails}
+                </Link>
+
+                {isInBasket(prod.id) ? (
+                  <button
+                    onClick={() => removeFromBasket(prod.id)}
+                    className="w-full py-2.5 bg-brand-rust/10 border border-brand-rust/30 text-brand-rust hover:bg-brand-rust/20 font-bold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <Check className="w-3.5 h-3.5" />
+                    <span>{t.prodBtnRemoveFromBasket}</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => addToBasket(prod)}
+                    className="w-full py-2.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                    <span>{t.prodBtnAddToBasket}</span>
+                  </button>
+                )}
               </div>
             </div>
           ))}
