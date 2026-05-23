@@ -8,6 +8,8 @@ import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle } from 'lu
 export default function ContactPage() {
   const { language, t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,14 +22,34 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.phone) {
-      setSubmitted(true);
-      // Simulate submission delay
-      setTimeout(() => {
+    if (!formData.name || !formData.phone) return;
+
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitted(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
-      }, 1000);
+      } else {
+        setErrorMessage(result.error || (language === 'ar' ? 'فشل إرسال الطلب. يرجى المحاولة مرة أخرى.' : 'Failed to send inquiry. Please try again.'));
+      }
+    } catch (err) {
+      setErrorMessage(language === 'ar' ? 'حدث خطأ في الشبكة. يرجى المحاولة مرة أخرى.' : 'A network error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -151,9 +173,10 @@ export default function ContactPage() {
                     type="text"
                     name="name"
                     required
+                    disabled={isSubmitting}
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary"
+                    className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary disabled:opacity-50"
                     placeholder={language === 'ar' ? 'مثال: محمد أحمد' : 'e.g. John Doe'}
                   />
                 </div>
@@ -164,9 +187,10 @@ export default function ContactPage() {
                     type="tel"
                     name="phone"
                     required
+                    disabled={isSubmitting}
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary"
+                    className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary disabled:opacity-50"
                     placeholder="e.g. +966 50 000 0000"
                   />
                 </div>
@@ -177,9 +201,10 @@ export default function ContactPage() {
                 <input
                   type="email"
                   name="email"
+                  disabled={isSubmitting}
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary"
+                  className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary disabled:opacity-50"
                   placeholder="e.g. name@company.com"
                 />
               </div>
@@ -189,19 +214,31 @@ export default function ContactPage() {
                 <textarea
                   name="message"
                   rows={5}
+                  disabled={isSubmitting}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary resize-none"
+                  className="w-full bg-brand-surface border border-brand-border/60 rounded-xl px-4 py-3 text-xs text-brand-dark placeholder-brand-silver/30 focus:outline-none focus:border-brand-primary resize-none disabled:opacity-50"
                   placeholder={t.contactFormMessage}
                 />
               </div>
 
+              {errorMessage && (
+                <div className="p-3.5 bg-red-500/10 border border-red-500/20 text-red-600 rounded-xl text-xs font-semibold">
+                  {errorMessage}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-3.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-bold rounded-xl text-xs flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all"
+                disabled={isSubmitting}
+                className="w-full py-3.5 bg-brand-primary hover:bg-brand-primary-light disabled:opacity-50 text-white hover:text-brand-surface font-bold rounded-xl text-xs flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all"
               >
-                <Send className="w-4 h-4 shrink-0" />
-                <span>{t.contactFormSubmit}</span>
+                {isSubmitting ? (
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0"></div>
+                ) : (
+                  <Send className="w-4 h-4 shrink-0" />
+                )}
+                <span>{isSubmitting ? (language === 'ar' ? 'جاري الإرسال...' : 'Sending...') : t.contactFormSubmit}</span>
               </button>
             </form>
           )}
