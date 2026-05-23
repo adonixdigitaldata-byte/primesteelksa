@@ -60,6 +60,11 @@ export const metadata: Metadata = {
     description: 'Bilingual steel catalog directory offering heavy industrial UPN channels, HEB H-beams, plain aluminum sheets, and epoxy rebars.',
     images: ['/og-image.png'],
   },
+  icons: {
+    icon: '/primesteelLogo.png',
+    shortcut: '/primesteelLogo.png',
+    apple: '/primesteelLogo.png',
+  },
 };
 
 export const viewport: Viewport = {
