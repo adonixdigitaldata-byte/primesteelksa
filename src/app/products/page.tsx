@@ -135,14 +135,14 @@ function ProductsCatalogContent() {
           {/* Mobile Filter Trigger */}
           <button
             onClick={() => setShowMobileFilters(true)}
-            className="lg:hidden flex items-center gap-2 px-4 py-3 bg-brand-surface-alt text-white font-bold rounded-xl text-xs border border-white/10 w-full justify-center hover:border-brand-primary/50 transition-colors"
+            className="lg:hidden flex items-center gap-2 px-4 py-3 bg-brand-surface-alt text-white font-bold rounded-xl text-xs border border-white/10 flex-1 justify-center hover:border-brand-primary/50 transition-colors"
           >
             <Filter className="w-4 h-4 text-brand-primary" />
             <span>{t.filterSidebarTitle}</span>
           </button>
 
           {/* Sort Selection dropdown */}
-          <div className="relative shrink-0 w-full md:w-56">
+          <div className="relative flex-1 md:flex-initial md:w-56">
             <select
               value={sortBy}
               onChange={(e) => {
