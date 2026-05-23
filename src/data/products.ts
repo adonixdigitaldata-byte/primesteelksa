@@ -531,7 +531,7 @@ export const products: Product[] = [
   {
     id: 'metal-baklava-rack',
     sku: 'PS-MSH-B11',
-    nameEn: 'metal baklava rack',
+    nameEn: 'Metal baklava rack',
     nameAr: 'شبك حديد تمدد (بقلاوة)',
     categoryEn: 'Wire Mesh & Fencing',
     categoryAr: 'شبك حديد وأسوار',
@@ -662,7 +662,7 @@ export const products: Product[] = [
   {
     id: 'solid-reinforcing-steel',
     sku: 'PS-RE-S14',
-    nameEn: 'solid reinforcing steel',
+    nameEn: 'Solid reinforcing steel',
     nameAr: 'حديد تسليح صلب (مصمت)',
     categoryEn: 'Reinforcing Steel (Rebar)',
     categoryAr: 'حديد تسليح للبناء',
@@ -1713,7 +1713,7 @@ export const products: Product[] = [
   {
     id: 'cast-iron-mesh',
     sku: 'PS-MSH-CI39',
-    nameEn: 'cast iron mesh',
+    nameEn: 'Cast iron mesh',
     nameAr: 'شبك حديد صب للخرسانة',
     categoryEn: 'Wire Mesh & Fencing',
     categoryAr: 'شبك حديد وأسوار',
