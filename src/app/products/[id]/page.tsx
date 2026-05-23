@@ -325,7 +325,7 @@ export default function ProductDetailPage() {
               </div>
               
               {/* Detailed Technical Dimensions */}
-              {(product.widthsMm || product.origins) && (
+              {(product.widthsMm || product.origins || product.heightsMm || product.lengthsMm || product.wt || product.tf || product.thicknessMm || product.diametersMm || product.diametersInch || product.gridSizeCm || product.meshSizes || product.steelCoatings || product.colors || product.surfaces || product.materialGrades || product.lengthsMeters || product.widthsMeters) && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {product.origins && (
                     <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
@@ -383,6 +383,116 @@ export default function ProductDetailPage() {
                       <div className="flex flex-wrap gap-2">
                         {product.tf.map(val => (
                           <span key={val} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{val}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.thicknessMm && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'السماكة (ملم)' : 'Thickness (mm)'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.thicknessMm.map(t => (
+                          <span key={t} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.diametersMm && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'القطر (ملم)' : 'Diameter (mm)'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.diametersMm.map(d => (
+                          <span key={d} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{d}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.diametersInch && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'القطر (بوصة)' : 'Diameter (inch)'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.diametersInch.map(d => (
+                          <span key={d} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{d}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.gridSizeCm && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'مقاس الشبكة (سم)' : 'Grid Size (cm)'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.gridSizeCm.map(g => (
+                          <span key={g} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{g}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.meshSizes && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'فتحة الشبك' : 'Mesh Size'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.meshSizes.map(m => (
+                          <span key={m} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{m}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.steelCoatings && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'الطلاء / الجلفنة' : 'Steel Coating'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.steelCoatings.map(c => (
+                          <span key={c} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-primary font-bold uppercase tracking-wider">{c}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.colors && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'اللون' : 'Color'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.colors.map(c => (
+                          <span key={c} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-primary font-bold uppercase tracking-wider">{c}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.surfaces && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'السطح' : 'Surface'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.surfaces.map(s => (
+                          <span key={s} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-primary font-bold uppercase tracking-wider">{s}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.materialGrades && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'الدرجة' : 'Material Grade'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.materialGrades.map(g => (
+                          <span key={g} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{g}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.lengthsMeters && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'الطول (متر)' : 'Length (meters)'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.lengthsMeters.map(l => (
+                          <span key={l} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{l}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {product.widthsMeters && (
+                    <div className="glass-panel border border-white/5 bg-[#0b0d14]/20 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-white mb-2.5 font-display">{language === 'ar' ? 'العرض (متر)' : 'Width (meters)'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {product.widthsMeters.map(w => (
+                          <span key={w} className="px-2 py-1 bg-[#0b0d14] border border-white/10 rounded text-[10px] text-brand-muted font-bold">{w}</span>
                         ))}
                       </div>
                     </div>

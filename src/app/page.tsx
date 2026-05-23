@@ -287,7 +287,7 @@ export default function Home() {
             href="/products"
             className="inline-flex items-center gap-2 px-8 py-4 border border-brand-primary hover:bg-brand-primary hover:text-white text-brand-primary font-extrabold rounded-xl transition-all duration-300 text-sm shadow-sm"
           >
-            <span>{language === 'ar' ? 'عرض جميع الـ ٣٩ منتجاً' : 'View All 39 Products'}</span>
+            <span>{language === 'ar' ? `عرض جميع الـ ${products.length} منتجاً` : `View All ${products.length} Products`}</span>
             <ArrowRight className="w-4 h-4 rtl-mirror" />
           </Link>
         </div>
