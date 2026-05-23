@@ -25,25 +25,19 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex justify-center space-x-3 gap-2 pt-2">
               <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
+                href="https://www.primesteelksa.com/"
                 className="w-8 h-8 rounded-lg bg-brand-surface-alt flex items-center justify-center text-brand-muted hover:text-white hover:bg-brand-primary transition-all duration-300"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
+                href="https://www.primesteelksa.com/"
                 className="w-8 h-8 rounded-lg bg-brand-surface-alt flex items-center justify-center text-brand-muted hover:text-white hover:bg-brand-primary transition-all duration-300"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
+                href="https://www.primesteelksa.com/"
                 className="w-8 h-8 rounded-lg bg-brand-surface-alt flex items-center justify-center text-brand-muted hover:text-white hover:bg-brand-primary transition-all duration-300"
               >
                 <Youtube className="w-4 h-4" />

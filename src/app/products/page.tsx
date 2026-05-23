@@ -159,6 +159,23 @@ function ProductsCatalogContent() {
         </div>
       </div>
 
+      {/* Mobile Search Bar */}
+      <div className="block lg:hidden mb-8">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder={t.filterSearch}
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1);
+            }}
+            className="peer w-full bg-[#0b0d14]/80 backdrop-blur-md border border-white/10 rounded-xl pl-9 pr-4 rtl:pl-4 rtl:pr-9 py-3 text-xs text-white placeholder-brand-muted/50 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 transition-all duration-300"
+          />
+          <Search className="absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-muted peer-focus:text-brand-primary transition-colors duration-300" />
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* ================= DESKTOP SIDEBAR FILTERS ================= */}
         <aside className="hidden lg:block space-y-6">
@@ -182,7 +199,6 @@ function ProductsCatalogContent() {
                 {language === 'ar' ? 'البحث عن منتج' : 'Search Keywords'}
               </label>
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-muted" />
                 <input
                   type="text"
                   placeholder={t.filterSearch}
@@ -191,8 +207,9 @@ function ProductsCatalogContent() {
                     setSearchQuery(e.target.value);
                     setCurrentPage(1);
                   }}
-                  className="w-full bg-[#05060a]/65 border border-white/10 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-brand-muted/50 focus:outline-none focus:border-brand-primary"
+                  className="peer w-full bg-[#05060a]/65 border border-white/10 rounded-xl pl-9 pr-4 rtl:pl-4 rtl:pr-9 py-2.5 text-xs text-white placeholder-brand-muted/50 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 transition-all duration-300"
                 />
+                <Search className="absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-muted peer-focus:text-brand-primary transition-colors duration-300" />
               </div>
             </div>
 

@@ -53,14 +53,14 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <img src="/primesteelLogo.png" alt="PrimeSteelKSA Logo" className="w-20 h-20 object-contain"/>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors duration-300 font-display">
+          <div className="flex-shrink-0 flex items-center min-w-0">
+            <Link href="/" className="flex items-center gap-1.5 md:gap-2.5 group min-w-0">
+              <img src="/primesteelLogo.png" alt="PrimeSteelKSA Logo" className="w-12 h-12 md:w-20 md:h-20 object-contain flex-shrink-0"/>
+              <div className="flex flex-col min-w-0">
+                <span className="text-lg md:text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors duration-300 font-display truncate">
                   PrimeSteel<span className="text-brand-primary">KSA</span>
                 </span>
-                <span className="text-[10px] text-brand-muted tracking-wider uppercase font-semibold -mt-1">
+                <span className="hidden md:block text-[10px] text-brand-muted tracking-wider uppercase font-semibold -mt-1 truncate">
                   {language === 'ar' ? 'حديد معتمد وصناعي' : 'Certified Industrial Steel'}
                 </span>
               </div>
@@ -85,26 +85,27 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Right actions (Language + Cart + Mobile burger) */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 md:gap-3 flex-shrink-0">
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-border bg-brand-surface-alt/20 text-brand-muted hover:text-brand-dark hover:border-brand-primary hover:bg-brand-surface-alt/50 transition-all duration-300 text-xs font-semibold"
+              className="flex items-center gap-1 px-1.5 py-1 md:px-3 md:py-1.5 rounded-lg border border-brand-border bg-brand-surface-alt/20 text-brand-muted hover:text-brand-dark hover:border-brand-primary hover:bg-brand-surface-alt/50 transition-all duration-300 text-[10px] md:text-xs font-semibold flex-shrink-0"
               title={language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
             >
-              <Globe className="w-3.5 h-3.5 text-brand-primary" />
-              <span>{language === 'en' ? 'عربي' : 'EN'}</span>
+              <Globe className="w-3 h-3 md:w-3.5 md:h-3.5 text-brand-primary" />
+              <span className="hidden md:inline">{language === 'en' ? 'عربي' : 'EN'}</span>
+              <span className="inline md:hidden">{language === 'en' ? 'AR' : 'EN'}</span>
             </button>
 
             {/* Inquiry Basket Link/Indicator */}
             <Link
               href="/products?basket=open"
-              className="relative p-2 rounded-lg border border-brand-border bg-brand-surface-alt/20 text-brand-muted hover:text-brand-dark hover:border-brand-primary hover:bg-brand-surface-alt/50 transition-all duration-300"
+              className="relative p-1.5 md:p-2 rounded-lg border border-brand-border bg-brand-surface-alt/20 text-brand-muted hover:text-brand-dark hover:border-brand-primary hover:bg-brand-surface-alt/50 transition-all duration-300 flex-shrink-0"
               title={t.navInquiryBasket}
             >
-              <ShoppingCart className="w-4.5 h-4.5" />
+              <ShoppingCart className="w-4 h-4 md:w-4.5 md:h-4.5" />
               {basketItems.length > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-brand-primary text-white font-bold text-[10px] rounded-full flex items-center justify-center animate-pulse">
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-brand-primary text-white font-bold text-[8px] md:text-[10px] rounded-full flex items-center justify-center animate-pulse">
                   {basketItems.length}
                 </span>
               )}
@@ -113,9 +114,9 @@ export const Header: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg border border-brand-border bg-brand-surface-alt/20 text-brand-muted hover:text-brand-dark hover:bg-brand-surface-alt/50 transition-all duration-300"
+              className="md:hidden p-1.5 rounded-lg border border-brand-border bg-brand-surface-alt/20 text-brand-muted hover:text-brand-dark hover:bg-brand-surface-alt/50 transition-all duration-300 flex-shrink-0"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>

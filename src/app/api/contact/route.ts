@@ -57,6 +57,7 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from,
       to: recipient,
+      replyTo: email && typeof email === 'string' && email.trim() ? email.trim() : undefined,
       subject,
       text: `
 New Contact / Quote Inquiry received from PrimeSteel KSA:

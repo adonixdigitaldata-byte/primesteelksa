@@ -240,14 +240,14 @@ To counter global logistical bottlenecks, Saudi construction contractors are shi
               {language === 'ar' ? 'مشاركة المقال' : 'Share Article'}
             </h3>
             <div className="flex gap-2">
-              <button className="flex-1 py-2 bg-brand-surface-alt hover:bg-brand-surface-mid/50 border border-brand-border/60 hover:border-brand-primary rounded-xl text-xs text-brand-muted hover:text-brand-dark font-bold flex items-center justify-center gap-1.5 transition-all">
+              <a href="https://www.primesteelksa.com/" className="flex-1 py-2 bg-brand-surface-alt hover:bg-brand-surface-mid/50 border border-brand-border/60 hover:border-brand-primary rounded-xl text-xs text-brand-muted hover:text-brand-dark font-bold flex items-center justify-center gap-1.5 transition-all">
                 <Linkedin className="w-4 h-4 text-brand-primary" />
                 <span>LinkedIn</span>
-              </button>
-              <button className="flex-1 py-2 bg-brand-surface-alt hover:bg-brand-surface-mid/50 border border-brand-border/60 hover:border-brand-primary rounded-xl text-xs text-brand-muted hover:text-brand-dark font-bold flex items-center justify-center gap-1.5 transition-all">
+              </a>
+              <a href="https://www.primesteelksa.com/" className="flex-1 py-2 bg-brand-surface-alt hover:bg-brand-surface-mid/50 border border-brand-border/60 hover:border-brand-primary rounded-xl text-xs text-brand-muted hover:text-brand-dark font-bold flex items-center justify-center gap-1.5 transition-all">
                 <Twitter className="w-4 h-4 text-brand-primary" />
                 <span>Twitter</span>
-              </button>
+              </a>
             </div>
           </div>
 
