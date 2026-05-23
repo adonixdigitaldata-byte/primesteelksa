@@ -305,22 +305,22 @@ Sourced from reputable mills in China and other regions, our U-Channels are back
     image: '/images/products/Western Reinforcing Steel.webp'
   },
   {
-    id: 'domestic-reinforcing-steel',
-    sku: 'PS-RE-D10',
-    nameEn: 'domestic reinforcing steel',
-    nameAr: 'حديد تسليح وطني (محلي)',
+    id: 'al-sabic-sulbjazeera-ksa',
+    sku: 'PS-RE-ASK',
+    nameEn: 'AL - Sabic,Sulbjazeera,Ksa',
+    nameAr: 'حديد تسليح - سابك، صلب الجزيرة، وطني',
     categoryEn: 'Reinforcing Steel (Rebar)',
     categoryAr: 'حديد تسليح للبناء',
     categorySlug: 'reinforcing-steel',
-    descriptionEn: 'Locally manufactured (SABIC & others) national reinforcing steel rebar. Made to SASO and international standards, offering trusted, high-performance strength for foundations.',
-    descriptionAr: 'حديد تسليح وطني مصنوع محلياً في المملكة العربية السعودية (سابك ومصانع وطنية أخرى). مصنع وفقاً للمواصفات السعودية (ساسو) والمعايير العالمية، يوفر متانة ممتازة للأساسات.',
-    specsEn: { Brand: 'National Brand (SABIC / Hadeed)', Quality: 'Premium Certified', Sizes: '8mm to 40mm', Length: '12m Standard' },
-    specsAr: { 'العلامة التجارية': 'وطني (حديد سابك / مصانع وطنية)', 'الجودة': 'معتمد وممتاز', 'الأحجام': '8 ملم إلى 40 ملم', 'الطول': '12 متر قياسي' },
+    descriptionEn: 'Premium reinforcing steel rebar sourced from top regional manufacturers including SABIC (Hadeed), Al Jazeera Steel, and Al-Mudaish. Fully certified under SASO and ASTM standards for high tensile load capacity.',
+    descriptionAr: 'حديد تسليح عالي الجودة متوفر من كبار المصنعين مثل سابك (حديد)، صلب الجزيرة، ومصنع المديش. معتمد بالكامل من الهيئة السعودية للمواصفات والمقاييس (SASO) وASTM لمقاومة الشد والظروف الإنشائية المختلفة.',
+    specsEn: { Manufacturer: 'SABIC / Hadeed, Al Jazeera Steel, Al-Mudaish', Standard: 'SASO ISO 6935-2 / ASTM A615', Sizes: '8mm to 40mm', Length: '12m Standard' },
+    specsAr: { 'المصنع': 'سابك / حديد، الجزيرة للصلب، المديش', 'المواصفة': 'SASO ISO 6935-2 / ASTM A615', 'الأحجام': '8 ملم إلى 40 ملم', 'الطول': '12 متر قياسي' },
     inStock: true,
     materialEn: 'High-Tensile Carbon Steel',
     materialAr: 'حديد كربوني عالي الشد',
-    gradeEn: 'Grade 60 / Gr 420',
-    gradeAr: 'درجة 60 / 420',
+    gradeEn: 'Grade 60 / B500B / B500C',
+    gradeAr: 'درجة 60 / B500B / B500C',
     image: '/images/products/domestic reinforcing steel.webp'
   },
   {
@@ -703,25 +703,7 @@ Sourced from reputable mills in China and other regions, our U-Channels are back
     gradeAr: 'B500B / ASTM A615',
     image: '/images/products/Local reinforcing steel.webp'
   },
-  {
-    id: 'al-mudaish-reinforcing-steel',
-    sku: 'PS-RE-AL31',
-    nameEn: 'Al-Mudaish Reinforcing Steel',
-    nameAr: 'حديد تسليح المديش',
-    categoryEn: 'Reinforcing Steel (Rebar)',
-    categoryAr: 'حديد تسليح للبناء',
-    categorySlug: 'reinforcing-steel',
-    descriptionEn: 'Top-tier reinforcing steel rebar from Al-Mudaish Steel Factory. Known for excellent tensile properties, robust bond strength with concrete, and high bending capacity.',
-    descriptionAr: 'حديد تسليح عالي الجودة من مصنع المديش للصلب. يشتهر بخصائص شد ممتازة، وقدرة ارتباط قوية مع الخرسانة، ومرونة ممتازة للانحناء دون تشقق.',
-    specsEn: { Factory: 'Al-Mudaish Steel Factory', Standard: 'SASO ISO 6935-2', CarbonEquivalent: 'Low (Easy Weldability)', Length: '12m Standard' },
-    specsAr: { 'المصنع': 'مصنع المديش للصلب', 'المواصفة': 'SASO ISO 6935-2', 'مكافئ الكربون': 'منخفض (سهل اللحام)', 'الطول': '12 متر قياسي' },
-    inStock: true,
-    materialEn: 'Carbon Steel Deformed Bar',
-    materialAr: 'حديد تسليح كربوني مشرشر',
-    gradeEn: 'Gr 420 / Grade 60',
-    gradeAr: 'درجة 60 / 420',
-    image: '/images/products/Al-Mudaish Reinforcing Steel.webp'
-  },
+
   {
     id: 'smooth-twisted-iron',
     sku: 'PS-BAR-ST32',
@@ -741,25 +723,7 @@ Sourced from reputable mills in China and other regions, our U-Channels are back
     gradeAr: 'درجة 40 / SR250',
     image: '/images/products/Smooth twisted iron.webp'
   },
-  {
-    id: 'al-jazeera-rebar',
-    sku: 'PS-RE-AJ33',
-    nameEn: 'Al Jazeera Rebar',
-    nameAr: 'حديد تسليح الجزيرة',
-    categoryEn: 'Reinforcing Steel (Rebar)',
-    categoryAr: 'حديد تسليح للبناء',
-    categorySlug: 'reinforcing-steel',
-    descriptionEn: 'Trusted high-strength reinforcing steel rebar manufactured by Al Jazeera Steel. Certified for superior ductility and shock absorption, ideal for seismically active construction projects.',
-    descriptionAr: 'حديد تسليح عالي القوة ومعتمد من مصانع الجزيرة للصلب. يتميز بمرونة عالية لامتصاص الهزات الأرضية، وهو خيار رائع للمباني والمشاريع العملاقة.',
-    specsEn: { Manufacturer: 'Al Jazeera Steel', Ductility: 'Super High (Class C)', Certification: 'ISO 9001 / SASO', Diameter: '8mm - 32mm' },
-    specsAr: { 'الجهة المصنعة': 'مصنع الجزيرة للصلب', 'المرونة': 'مرونة فائقة (فئة C)', 'الشهادات': 'ISO 9001 / ساسو', 'الأقطار المتاحة': '8 ملم - 32 ملم' },
-    inStock: true,
-    materialEn: 'High-Ductility Rebar',
-    materialAr: 'حديد تسليح مرن عالي القوة',
-    gradeEn: 'B500C / Grade 60',
-    gradeAr: 'درجة 60 / B500C',
-    image: '/images/products/Al Jazeera Rebar.webp'
-  },
+
   {
     id: 'rabigh-reinforcing-steel',
     sku: 'PS-RE-RS34',

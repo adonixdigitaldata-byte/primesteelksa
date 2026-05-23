@@ -155,7 +155,7 @@ export default function AboutPage() {
         <div className="pt-6">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl text-sm transition-all shadow-md shadow-brand-primary/20"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl text-sm transition-all shadow-md shadow-brand-primary/20"
           >
             <span>{language === 'ar' ? 'عرض الكتالوج الفني للمخزون' : 'Browse Inventory Specs'}</span>
             <ArrowRight className="w-4 h-4 rtl-mirror" />

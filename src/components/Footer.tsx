@@ -16,19 +16,14 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="flex flex-col space-y-4">
-            <Link href="/" className="flex items-center gap-2 group w-max">
-              <div className="relative w-9 h-9 bg-gradient-to-tr from-brand-primary to-brand-primary-light rounded-lg flex items-center justify-center font-black text-brand-surface text-lg shadow-glow">
-                P
-              </div>
-              <span className="text-lg font-bold tracking-tight text-brand-dark font-display">
-                PrimeSteel<span className="text-brand-primary">KSA</span>
-              </span>
+          <div className="flex flex-col items-center text-center space-y-4">
+            <Link href="/" className="group block">
+              <img src="/primesteelLogo.png" alt="PrimeSteelKSA Logo" className="w-32 h-32 object-contain mx-auto"/>
             </Link>
-            <p className="text-sm leading-relaxed text-brand-muted">
+            <p className="text-sm leading-relaxed text-brand-muted max-w-sm">
               {t.footerTagline}
             </p>
-            <div className="flex space-x-3 gap-2 pt-2">
+            <div className="flex justify-center space-x-3 gap-2 pt-2">
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -104,18 +99,17 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
                 <span>
-                  {language === 'ar'
-                    ? 'طريق الملك عبدالعزيز، حي الياسمين، الرياض، المملكة العربية السعودية'
-                    : 'King Abdulaziz Road, Al Yasmin, Riyadh, Kingdom of Saudi Arabia'}
+                  Obold Ibn Jahash Street<br/>
+                  Jeddah, Saudi Arabia
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-brand-primary shrink-0" />
-                <span dir="ltr">+966 50 000 0000</span>
+                <span dir="ltr">+966 55 143 8917</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-brand-primary shrink-0" />
-                <span>info@primesteelksa.com</span>
+                <span>sales@primesteelksa.com</span>
               </li>
             </ul>
           </div>

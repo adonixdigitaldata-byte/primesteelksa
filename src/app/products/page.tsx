@@ -31,7 +31,6 @@ function ProductsCatalogContent() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedMaterial, setSelectedMaterial] = useState('');
-  const [inStockOnly, setInStockOnly] = useState(false);
   const [sortBy, setSortBy] = useState('name-asc');
   
   // Mobile drawer state
@@ -71,9 +70,7 @@ function ProductsCatalogContent() {
       ? (language === 'ar' ? prod.materialAr : prod.materialEn) === selectedMaterial
       : true;
 
-    const matchesStock = inStockOnly ? prod.inStock : true;
-
-    return matchesSearch && matchesCategory && matchesMaterial && matchesStock;
+    return matchesSearch && matchesCategory && matchesMaterial;
   });
 
   // Sorting Logic
@@ -111,7 +108,6 @@ function ProductsCatalogContent() {
     setSearchQuery('');
     setSelectedCategory('');
     setSelectedMaterial('');
-    setInStockOnly(false);
     setSortBy('name-asc');
     setCurrentPage(1);
   };
@@ -259,28 +255,6 @@ function ProductsCatalogContent() {
                 ))}
               </select>
             </div>
-
-            {/* Stock Toggle */}
-            <div className="flex items-center justify-between pt-4 border-t border-white/5">
-              <span className="text-xs font-bold text-brand-muted">{t.filterInStockOnly}</span>
-              <button
-                onClick={() => {
-                  setInStockOnly(!inStockOnly);
-                  setCurrentPage(1);
-                }}
-                className={`w-10 h-6 rounded-full p-1 transition-colors duration-300 focus:outline-none ${
-                  inStockOnly ? 'bg-brand-primary' : 'bg-brand-surface-mid border border-white/5'
-                }`}
-              >
-                <div
-                  className={`w-4 h-4 bg-white rounded-full transition-transform duration-300 ${
-                    inStockOnly
-                      ? 'translate-x-4 rtl:-translate-x-4'
-                      : 'translate-x-0'
-                  }`}
-                />
-              </button>
-            </div>
           </div>
         </aside>
 
@@ -311,11 +285,6 @@ function ProductsCatalogContent() {
                     <div className="absolute top-2.5 left-2.5 bg-[#05060a]/90 border border-white/10 px-2 py-0.5 rounded text-[9px] font-bold text-brand-primary flex items-center gap-1">
                       <Star className="w-2.5 h-2.5 fill-current" />
                       <span>SASO / JIS</span>
-                    </div>
-                    <div
-                      className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[9px] font-bold bg-brand-primary/10 text-brand-primary border border-brand-primary/20 uppercase tracking-wider"
-                    >
-                      {prod.inStock ? t.prodInStock : t.prodOutOfStock}
                     </div>
                   </div>
 
@@ -362,7 +331,7 @@ function ProductsCatalogContent() {
                       ) : (
                         <button
                           onClick={() => addToBasket(prod)}
-                          className="w-full py-2 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
+                          className="w-full py-2 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
                         >
                           <Plus className="w-3.5 h-3.5" />
                           <span>{t.prodBtnAddToBasket}</span>
@@ -386,7 +355,7 @@ function ProductsCatalogContent() {
               </p>
               <button
                 onClick={handleClearFilters}
-                className="px-6 py-2 bg-brand-primary text-brand-surface font-extrabold rounded-xl text-xs hover:bg-brand-primary-light transition-all duration-300"
+                className="px-6 py-2 bg-brand-primary text-white hover:text-brand-surface font-extrabold rounded-xl text-xs hover:bg-brand-primary-light transition-all duration-300"
               >
                 {t.filterClear}
               </button>
@@ -410,7 +379,7 @@ function ProductsCatalogContent() {
                   onClick={() => handlePageChange(pageNum)}
                   className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${
                     currentPage === pageNum
-                      ? 'bg-brand-primary text-brand-surface font-extrabold'
+                      ? 'bg-brand-primary text-white font-extrabold'
                       : 'bg-brand-surface-alt text-brand-muted hover:text-white border border-white/10'
                   }`}
                 >
@@ -521,26 +490,6 @@ function ProductsCatalogContent() {
                   ))}
                 </select>
               </div>
-
-              {/* Stock toggle */}
-              <div className="flex justify-between items-center pt-3 border-t border-white/5">
-                <span className="text-xs font-bold text-brand-muted">{t.filterInStockOnly}</span>
-                <button
-                  onClick={() => {
-                    setInStockOnly(!inStockOnly);
-                    setCurrentPage(1);
-                  }}
-                  className={`w-10 h-6 rounded-full p-1 transition-colors ${
-                    inStockOnly ? 'bg-brand-primary' : 'bg-brand-surface-mid border border-white/10'
-                  }`}
-                >
-                  <div
-                    className={`w-4 h-4 bg-white rounded-full transition-transform ${
-                      inStockOnly ? 'translate-x-4 rtl:-translate-x-4' : 'translate-x-0'
-                    }`}
-                  />
-                </button>
-              </div>
             </div>
 
             <div className="pt-6 border-t border-white/5 flex flex-col gap-2">
@@ -552,7 +501,7 @@ function ProductsCatalogContent() {
               </button>
               <button
                 onClick={() => setShowMobileFilters(false)}
-                className="w-full py-2.5 bg-brand-primary text-brand-surface font-extrabold text-xs rounded-xl"
+                className="w-full py-2.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold text-xs rounded-xl transition-all duration-300"
               >
                 {language === 'ar' ? 'تطبيق الفلاتر' : 'Apply Filters'}
               </button>
@@ -625,7 +574,7 @@ function ProductsCatalogContent() {
                 </div>
                 <button
                   onClick={triggerWhatsAppInquiry}
-                  className="w-full py-3.5 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-2 shadow-md shadow-brand-primary/20"
+                  className="w-full py-3.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-2 shadow-md shadow-brand-primary/20"
                 >
                   <ShoppingCart className="w-4 h-4 shrink-0" />
                   <span>{t.basketInquireSelected}</span>

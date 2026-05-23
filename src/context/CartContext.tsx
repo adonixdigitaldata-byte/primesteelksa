@@ -58,7 +58,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const triggerWhatsAppInquiry = () => {
     if (basketItems.length === 0) return;
 
-    const waNumber = '966500000000'; // Placeholder KSA number as per spec
+    const waNumber = '966551438917'; // Updated WhatsApp number
 
     let text = '';
     if (language === 'ar') {

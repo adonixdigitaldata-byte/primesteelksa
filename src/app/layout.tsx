@@ -79,7 +79,7 @@ export default function RootLayout({
         <LanguageProvider>
           <CartProvider>
             <Header />
-            <main className="flex-grow pt-24">
+            <main className="flex-grow pt-20">
               {children}
             </main>
             <Footer />

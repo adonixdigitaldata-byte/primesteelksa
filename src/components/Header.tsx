@@ -54,16 +54,13 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative w-10 h-10 bg-gradient-to-tr from-brand-primary to-brand-primary-light rounded-lg flex items-center justify-center font-black text-brand-surface text-xl shadow-glow transform group-hover:scale-105 transition-transform duration-300">
-                P
-                <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-brand-surface rounded-full border-2 border-brand-primary"></span>
-              </div>
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <img src="/primesteelLogo.png" alt="PrimeSteelKSA Logo" className="w-14 h-14 object-contain"/>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors duration-300 font-display">
+                <span className="text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-primary transition-colors duration-300 font-display">
                   PrimeSteel<span className="text-brand-primary">KSA</span>
                 </span>
-                <span className="text-[9px] text-brand-muted tracking-wider uppercase font-semibold -mt-1">
+                <span className="text-[10px] text-brand-muted tracking-wider uppercase font-semibold -mt-1">
                   {language === 'ar' ? 'حديد معتمد وصناعي' : 'Certified Industrial Steel'}
                 </span>
               </div>
@@ -153,7 +150,7 @@ export const Header: React.FC = () => {
                 {language === 'ar' ? 'مبيعات الحديد المباشرة' : 'Direct Steel Sales'}
               </p>
               <a
-                href="https://wa.me/966500000000"
+                href="https://wa.me/966551438917"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 p-3 bg-brand-primary text-white rounded-xl font-bold justify-center shadow-md shadow-brand-primary/20 hover:opacity-90 transition-opacity"

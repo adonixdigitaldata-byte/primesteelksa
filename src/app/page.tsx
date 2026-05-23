@@ -70,19 +70,13 @@ export default function Home() {
   return (
     <div className="space-y-28 pb-24 overflow-hidden bg-brand-surface">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[95vh] flex items-center justify-center pt-20 overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(217,119,6,0.1),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(11,13,20,0.9),transparent_60%)]">
+      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(217,119,6,0.1),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(11,13,20,0.9),transparent_60%)]">
         {/* Subtle grid pattern for technical design feel */}
         <div className="absolute inset-0 bg-hero-pattern opacity-[0.04] z-0"></div>
         {/* Shimmer overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-surface/30 to-brand-surface z-0 pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center space-y-10 animate-fade-up">
-          {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/5 text-brand-primary font-bold text-xs uppercase tracking-wider mx-auto shadow-sm backdrop-blur-md">
-            <Award className="w-4 h-4 text-glow-amber animate-pulse" />
-            <span>{language === 'ar' ? 'مصدر الحديد الصناعي المعتمد رقم ١' : 'KSA\'s #1 Certified Industrial Steel Source'}</span>
-          </div>
-
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center space-y-10 animate-fade-up">
           {/* Main Title */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-dark max-w-5xl mx-auto leading-tight font-display">
             {t.heroTitle.split(' ').map((word, i) => (
@@ -114,7 +108,7 @@ export default function Home() {
             />
             <Link
               href={`/products?search=${encodeURIComponent(searchQuery)}`}
-              className="px-6 py-2.5 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl text-xs transition-all duration-300 flex items-center gap-1.5 shrink-0"
+              className="px-6 py-2.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl text-xs transition-all duration-300 flex items-center gap-1.5 shrink-0"
             >
               <span>{language === 'ar' ? 'بحث' : 'Search'}</span>
               <ArrowRight className="w-3.5 h-3.5 rtl-mirror" />
@@ -125,13 +119,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
             <Link
               href="/products"
-              className="w-full sm:w-auto px-8 py-4 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl shadow-md shadow-brand-primary/25 transform hover:-translate-y-0.5 transition-all duration-300 text-sm flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-8 py-4 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl shadow-md shadow-brand-primary/25 transform hover:-translate-y-0.5 transition-all duration-300 text-sm flex items-center justify-center gap-2 group"
             >
               <span>{t.heroCtaExplore}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform rtl-mirror" />
             </Link>
             <a
-              href="https://wa.me/966500000000"
+              href="https://wa.me/966551438917"
               target="_blank"
               rel="noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-brand-surface-alt/80 hover:bg-brand-surface-mid/80 text-white font-bold rounded-xl border border-white/10 hover:border-brand-primary/50 transition-all duration-300 text-sm flex items-center justify-center gap-2 backdrop-blur"
@@ -228,10 +222,6 @@ export default function Home() {
                   <Star className="w-3 h-3 fill-current" />
                   <span>JIS / ASTM</span>
                 </div>
-                {/* Availability badge */}
-                <div className="absolute top-3 right-3 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">
-                  {t.prodInStock}
-                </div>
               </div>
 
               {/* Card Content */}
@@ -277,7 +267,7 @@ export default function Home() {
                   ) : (
                     <button
                       onClick={() => addToBasket(prod)}
-                      className="w-full py-2.5 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
+                      className="w-full py-2.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>{t.prodBtnAddToBasket}</span>
@@ -293,7 +283,7 @@ export default function Home() {
         <div className="text-center pt-8">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-8 py-4 border border-brand-primary hover:bg-brand-primary hover:text-brand-surface text-brand-primary font-extrabold rounded-xl transition-all duration-300 text-sm shadow-sm"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-brand-primary hover:bg-brand-primary hover:text-white text-brand-primary font-extrabold rounded-xl transition-all duration-300 text-sm shadow-sm"
           >
             <span>{language === 'ar' ? 'عرض جميع الـ ٣٩ منتجاً' : 'View All 39 Products'}</span>
             <ArrowRight className="w-4 h-4 rtl-mirror" />
@@ -313,7 +303,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="glass-panel glass-panel-hover p-6 rounded-2xl text-center space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mx-auto shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center text-primary-blue mx-auto shadow-sm">
                 <Award className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-display">{t.uspQualityTitle}</h3>
@@ -321,7 +311,7 @@ export default function Home() {
             </div>
 
             <div className="glass-panel glass-panel-hover p-6 rounded-2xl text-center space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mx-auto shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center text-primary-blue mx-auto shadow-sm">
                 <Truck className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-display">{t.uspDeliveryTitle}</h3>
@@ -329,7 +319,7 @@ export default function Home() {
             </div>
 
             <div className="glass-panel glass-panel-hover p-6 rounded-2xl text-center space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mx-auto shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center text-primary-blue mx-auto shadow-sm">
                 <Settings className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-display">{t.uspCertTitle}</h3>
@@ -337,7 +327,7 @@ export default function Home() {
             </div>
 
             <div className="glass-panel glass-panel-hover p-6 rounded-2xl text-center space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mx-auto shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center text-primary-blue mx-auto shadow-sm">
                 <MessageSquare className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-display">{t.uspSupportTitle}</h3>
@@ -409,10 +399,10 @@ export default function Home() {
 
           <div className="shrink-0 relative z-10 w-full sm:w-auto">
             <a
-              href="https://wa.me/966500000000?text=Hello%20PrimeSteelKSA%2C%20I%20need%20a%20custom%20price%20quote%20for%20industrial%20steel%20products."
+              href="https://wa.me/966551438917?text=Hello%20PrimeSteelKSA%2C%20I%20need%20a%20custom%20price%20quote%20for%20industrial%20steel%20products."
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl shadow-md shadow-brand-primary/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl shadow-md shadow-brand-primary/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-sm"
             >
               <MessageSquare className="w-5 h-5 shrink-0" />
               <span>{t.ctaBannerButton}</span>

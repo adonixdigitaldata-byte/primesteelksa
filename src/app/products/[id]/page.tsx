@@ -40,7 +40,7 @@ export default function ProductDetailPage() {
 
   // Single WhatsApp Inquiry CTA trigger
   const handleSingleInquiry = () => {
-    const waNumber = '966500000000'; // Placeholder number
+    const waNumber = '966551438917'; // Updated WhatsApp number
     const prodName = language === 'ar' ? product.nameAr : product.nameEn;
     const text = language === 'ar'
       ? `مرحباً PrimeSteelKSA، أنا مهتم بالاستفسار عن هذا المنتج:\n\n*المنتج:* ${prodName}\n*الرمز SKU:* ${product.sku}\n*المادة الخام:* ${product.materialAr}\n\nيرجى تزويدي بالأسعار ومدى توفرها حالياً. شكراً!`
@@ -130,12 +130,6 @@ export default function ProductDetailPage() {
               <Award className="w-3.5 h-3.5" />
               <span>SASO Certified</span>
             </div>
-
-            <div
-              className="absolute top-4 right-4 px-3 py-1 rounded-lg text-xs font-bold bg-brand-primary/10 text-brand-primary border border-brand-primary/35 uppercase tracking-wider"
-            >
-              {product.inStock ? t.prodInStock : t.prodOutOfStock}
-            </div>
           </div>
 
           <div className="grid grid-cols-3 gap-3">
@@ -213,7 +207,7 @@ export default function ProductDetailPage() {
           <div className="flex flex-col sm:flex-row gap-3.5 pt-2">
             <button
               onClick={handleSingleInquiry}
-              className="flex-grow inline-flex items-center justify-center gap-2.5 px-6 py-4 bg-brand-primary hover:bg-brand-primary-light text-brand-surface font-extrabold rounded-xl shadow-md shadow-brand-primary/20 transition-all duration-300 text-sm"
+              className="flex-grow inline-flex items-center justify-center gap-2.5 px-6 py-4 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-xl shadow-md shadow-brand-primary/20 transition-all duration-300 text-sm"
             >
               <Send className="w-4.5 h-4.5" />
               <span>{t.prodBtnInquire}</span>
@@ -268,14 +262,14 @@ export default function ProductDetailPage() {
                     <td className="px-6 py-4 text-center">
                       <button
                         onClick={() => {
-                          const waNumber = '966500000000';
+                          const waNumber = '966551438917';
                           const prodName = language === 'ar' ? product.nameAr : product.nameEn;
                           const text = language === 'ar'
                             ? `مرحباً PrimeSteelKSA، أود الاستفسار عن هذا البند المحدد:\n\n*المنتج الرئيسي:* ${prodName}\n*البند المطلوب:* ${item.name}\n*السعر:* ${item.price} ريال سعودي\n\nيرجى تزويدي بالتوفر ومواعيد التوصيل لمشروعي. شكراً!`
                             : `Hello PrimeSteelKSA, I am interested in inquiring about this specific item option:\n\n*Main Product:* ${prodName}\n*Selected Item:* ${item.name}\n*Price:* ${item.price} SAR\n\nPlease confirm availability and delivery timeframe. Thank you!`;
                           window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
                         }}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary hover:bg-brand-primary hover:text-brand-surface font-extrabold rounded-lg text-xs transition-all duration-300"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 text-brand-primary hover:bg-brand-primary hover:text-white font-extrabold rounded-lg text-xs transition-all duration-300"
                       >
                         <Send className="w-3.5 h-3.5" />
                         <span>{language === 'ar' ? 'استفسار' : 'Inquire'}</span>

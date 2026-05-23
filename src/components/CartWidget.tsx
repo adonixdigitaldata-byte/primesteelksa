@@ -87,7 +87,7 @@ export const CartWidget: React.FC = () => {
             </div>
             <button
               onClick={triggerWhatsAppInquiry}
-              className="flex items-center justify-center gap-2 p-3 bg-brand-primary text-brand-surface font-extrabold text-xs rounded-xl hover:bg-brand-primary-light hover:shadow-md shadow-brand-primary/20 shadow-sm transition-all duration-300 w-full active:scale-[0.98]"
+              className="flex items-center justify-center gap-2 p-3 bg-brand-primary text-white hover:text-brand-surface font-extrabold text-xs rounded-xl hover:bg-brand-primary-light hover:shadow-md shadow-brand-primary/20 shadow-sm transition-all duration-300 w-full active:scale-[0.98]"
             >
               <Send className="w-4 h-4 shrink-0" />
               <span>{t.basketInquireSelected}</span>

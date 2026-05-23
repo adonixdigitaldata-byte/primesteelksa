@@ -70,8 +70,8 @@ export default function ContactPage() {
                   <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'العنوان الرئيسي' : 'Headquarters'}</h4>
                   <p className="text-brand-muted">
                     {language === 'ar'
-                      ? 'طريق الملك عبدالعزيز، حي الياسمين، الرياض، المملكة العربية السعودية'
-                      : 'King Abdulaziz Road, Al Yasmin, Riyadh, Kingdom of Saudi Arabia'}
+                      ? 'شارع أوبولد بن جحش، جدة، المملكة العربية السعودية'
+                      : 'Obold Ibn Jahash Street, Jeddah, Saudi Arabia'}
                   </p>
                 </div>
               </div>
@@ -82,7 +82,8 @@ export default function ContactPage() {
                 </div>
                 <div className="text-xs sm:text-sm">
                   <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'رقم الهاتف المباشر' : 'Direct Call Line'}</h4>
-                  <p className="text-brand-muted font-semibold" dir="ltr">+966 50 000 0000</p>
+                  <p className="text-brand-muted font-semibold" dir="ltr">+966 54 277 7716</p>
+                  <p className="text-brand-muted font-semibold" dir="ltr">+966 55 143 8917</p>
                 </div>
               </div>
 
@@ -92,7 +93,7 @@ export default function ContactPage() {
                 </div>
                 <div className="text-xs sm:text-sm">
                   <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'البريد الإلكتروني' : 'Official Email'}</h4>
-                  <p className="text-brand-muted font-semibold">info@primesteelksa.com</p>
+                  <p className="text-brand-muted font-semibold" dir="ltr">sales@primesteelksa.com</p>
                 </div>
               </div>
             </div>
@@ -109,10 +110,10 @@ export default function ContactPage() {
 
           {/* Direct WhatsApp Call link button */}
           <a
-            href="https://wa.me/966500000000?text=Hello%20PrimeSteelKSA%2C%20I%20have%20an%20urgent%20steel%20procurement%20inquiry%20contract."
+            href="https://wa.me/966551438917?text=Hello%20PrimeSteelKSA%2C%20I%20have%20an%20urgent%20steel%20procurement%20inquiry%20contract."
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-2.5 p-4 bg-brand-primary hover:bg-brand-primary-light text-white font-extrabold rounded-2xl shadow-md shadow-brand-primary/20 shadow-sm w-full transition-all duration-300 active:scale-[0.98]"
+            className="flex items-center justify-center gap-2.5 p-4 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-extrabold rounded-2xl shadow-md shadow-brand-primary/20 shadow-sm w-full transition-all duration-300 active:scale-[0.98]"
           >
             <MessageSquare className="w-5 h-5 shrink-0" />
             <span>{language === 'ar' ? 'دردش مباشرة مبيعات الواتساب' : 'WhatsApp Direct Live Chat'}</span>
@@ -197,7 +198,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-brand-primary hover:bg-brand-primary-light text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all"
+                className="w-full py-3.5 bg-brand-primary hover:bg-brand-primary-light text-white hover:text-brand-surface font-bold rounded-xl text-xs flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all"
               >
                 <Send className="w-4 h-4 shrink-0" />
                 <span>{t.contactFormSubmit}</span>
@@ -211,11 +212,11 @@ export default function ContactPage() {
       <section className="bg-brand-surface-mid border border-brand-border/65 rounded-3xl overflow-hidden shadow-card">
         <div className="p-5 bg-brand-surface/60 border-b border-brand-border/60 flex items-center gap-3">
           <MapPin className="w-5 h-5 text-brand-primary" />
-          <h3 className="font-bold text-brand-dark text-sm">{language === 'ar' ? 'الموقع الجغرافي للمقر الرئيسي بالرياض' : 'Riyadh Headquarters Geographic Pin'}</h3>
+          <h3 className="font-bold text-brand-dark text-sm">{language === 'ar' ? 'الموقع الجغرافي للمقر الرئيسي بجدة' : 'Jeddah Headquarters Geographic Pin'}</h3>
         </div>
         <div className="h-96 relative">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115858.91897451194!2d46.5423403206687!3d24.843603417758797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efda2c590d79d%3A0x6b772c1c385c544d!2sAl%20Yasmin%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1716035000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237638.64795232937!2d39.1005886!3d21.5760608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e79%3A0xb35a3962d3c9f225!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
             width="100%"
             height="100%"
             style={{ border: 0 }}
