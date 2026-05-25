@@ -1119,7 +1119,7 @@ export const products: Product[] = [
     materialAr: 'حديد مجلفن ملون مسبقاً (شينكو)',
     gradeEn: 'Commercial Roofing Grade',
     gradeAr: 'درجة تسقيف تجارية شينكو',
-    image: '/images/products/Sheet metal, zinc.webp',
+    image: '/images/products/newSheet metal, zinc.png',
     priceSAR: 6.04,
     longDescriptionEn: 'Our corrugated Sheet metal, zinc panels are a popular roofing and cladding material that offer exceptional structural strength, long-term durability, and a sleek appearance. They are made of lightweight materials that make them easy to install and maintain.',
     longDescriptionAr: 'تعد ألواح الصاج المموج (الشينكو) خياراً مثالياً لأعمال التسقيف وتغطية الجدران والجمالونات والهناجر والمستودعات لحمايتها من العوامل الجوية.',
