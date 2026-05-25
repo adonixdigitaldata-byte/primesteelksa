@@ -33,6 +33,8 @@ export default function ProductDetailPage() {
     return notFound();
   }
 
+  const isCustomPriceProduct = product.id === 'plumbing-item' || product.id === 'fabrication-item';
+
   // Related products (4 items from the same category)
   const relatedProducts = products
     .filter((p) => p.categorySlug === product.categorySlug && p.id !== product.id)
@@ -42,9 +44,13 @@ export default function ProductDetailPage() {
   const handleSingleInquiry = () => {
     const waNumber = '966551438917'; // Updated WhatsApp number
     const prodName = language === 'ar' ? product.nameAr : product.nameEn;
-    const text = language === 'ar'
-      ? `مرحباً PrimeSteelKSA، أنا مهتم بالاستفسار عن هذا المنتج:\n\n*المنتج:* ${prodName}\n*الرمز SKU:* ${product.sku}\n*المادة الخام:* ${product.materialAr}\n\nيرجى تزويدي بالأسعار ومدى توفرها حالياً. شكراً!`
-      : `Hello PrimeSteelKSA, I am interested in inquiring about this product:\n\n*Product:* ${prodName}\n*SKU:* ${product.sku}\n*Material:* ${product.materialEn}\n\nPlease share current pricing and availability. Thank you!`;
+    const text = isCustomPriceProduct
+      ? (language === 'ar'
+          ? `مرحباً PrimeSteelKSA، أنا مهتم بالاستفسار عن هذا المنتج:\n\n*المنتج:* ${prodName}\n*الرمز SKU:* ${product.sku}\n\nيرجى تزويدي بالأسعار ومدى توفرها حالياً. شكراً!`
+          : `Hello PrimeSteelKSA, I am interested in inquiring about this product:\n\n*Product:* ${prodName}\n*SKU:* ${product.sku}\n\nPlease share current pricing and availability. Thank you!`)
+      : (language === 'ar'
+          ? `مرحباً PrimeSteelKSA، أنا مهتم بالاستفسار عن هذا المنتج:\n\n*المنتج:* ${prodName}\n*الرمز SKU:* ${product.sku}\n*المادة الخام:* ${product.materialAr}\n\nيرجى تزويدي بالأسعار ومدى توفرها حالياً. شكراً!`
+          : `Hello PrimeSteelKSA, I am interested in inquiring about this product:\n\n*Product:* ${prodName}\n*SKU:* ${product.sku}\n*Material:* ${product.materialEn}\n\nPlease share current pricing and availability. Thank you!`);
 
     const encodedText = encodeURIComponent(text);
     const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
@@ -156,8 +162,12 @@ export default function ProductDetailPage() {
             </h1>
             <div className="flex items-center gap-4 text-xs font-bold text-brand-muted uppercase tracking-wider">
               <span>{t.prodSku}: <span className="text-white font-mono">{product.sku}</span></span>
-              <span>•</span>
-              <span>{t.prodMaterial}: <span className="text-white">{language === 'ar' ? product.materialAr : product.materialEn}</span></span>
+              {!isCustomPriceProduct && (
+                <>
+                  <span>•</span>
+                  <span>{t.prodMaterial}: <span className="text-white">{language === 'ar' ? product.materialAr : product.materialEn}</span></span>
+                </>
+              )}
             </div>
           </div>
 
@@ -165,7 +175,18 @@ export default function ProductDetailPage() {
           <div className="glass-panel border border-white/5 bg-[#0b0d14]/40 rounded-xl p-5 flex gap-4 items-center">
             <ShieldCheck className="w-6 h-6 text-brand-primary shrink-0" />
             <div className="text-xs text-brand-muted space-y-1">
-              {product.priceSAR ? (
+              {isCustomPriceProduct ? (
+                <>
+                  <p className="font-extrabold text-white text-sm">
+                    {language === 'ar' ? 'الأسعار قد تختلف حسب المقاس، يرجى التواصل معنا لمعرفة المزيد' : 'Price may vary depending on the size, reach us out to know more'}
+                  </p>
+                  <p className="leading-relaxed">
+                    {language === 'ar'
+                      ? 'بسبب اختلاف المقاسات والتصنيع لكل طلب، يرجى التواصل معنا مباشرة لمناقشة عروض الأسعار.'
+                      : 'Due to custom sizing and fabrication requests, please contact our team directly for detailed pricing.'}
+                  </p>
+                </>
+              ) : product.priceSAR ? (
                 <>
                   <p className="font-extrabold text-white text-xl">
                     {product.priceSAR} SAR
@@ -192,16 +213,18 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Core Specs Grid */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="glass-panel border border-white/5 p-4 rounded-xl space-y-1">
-              <span className="text-[10px] text-brand-muted font-bold uppercase tracking-wider">{t.prodMaterial}</span>
-              <p className="text-sm font-bold text-white">{language === 'ar' ? product.materialAr : product.materialEn}</p>
+          {!isCustomPriceProduct && (
+            <div className="grid grid-cols-2 gap-4">
+              <div className="glass-panel border border-white/5 p-4 rounded-xl space-y-1">
+                <span className="text-[10px] text-brand-muted font-bold uppercase tracking-wider">{t.prodMaterial}</span>
+                <p className="text-sm font-bold text-white">{language === 'ar' ? product.materialAr : product.materialEn}</p>
+              </div>
+              <div className="glass-panel border border-white/5 p-4 rounded-xl space-y-1">
+                <span className="text-[10px] text-brand-muted font-bold uppercase tracking-wider">{t.prodGrade}</span>
+                <p className="text-sm font-bold text-white">{language === 'ar' ? product.gradeAr : product.gradeEn}</p>
+              </div>
             </div>
-            <div className="glass-panel border border-white/5 p-4 rounded-xl space-y-1">
-              <span className="text-[10px] text-brand-muted font-bold uppercase tracking-wider">{t.prodGrade}</span>
-              <p className="text-sm font-bold text-white">{language === 'ar' ? product.gradeAr : product.gradeEn}</p>
-            </div>
-          </div>
+          )}
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-3.5 pt-2">
@@ -284,7 +307,8 @@ export default function ProductDetailPage() {
       )}
 
       {/* Tabs segment: technical sheet vs details */}
-      <div className="glass-panel border border-white/5 rounded-2xl overflow-hidden mt-8">
+      {!isCustomPriceProduct && (
+        <div className="glass-panel border border-white/5 rounded-2xl overflow-hidden mt-8">
         <div className="flex border-b border-white/5 bg-[#05060a]/35">
           <button
             onClick={() => setActiveTab('specs')}
@@ -553,6 +577,7 @@ export default function ProductDetailPage() {
           )}
         </div>
       </div>
+      )}
 
       {/* Related items */}
       {relatedProducts.length > 0 && (

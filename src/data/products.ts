@@ -1773,7 +1773,6 @@ export const products: Product[] = [
     gradeEn: 'Standard Fitting Grade',
     gradeAr: 'درجة توصيل قياسية',
     image: '/images/products/Plumbing item.jpeg',
-    priceSAR: 45.00,
     longDescriptionEn: 'Our industrial plumbing items and pipe fittings are engineered to meet the highest performance standards in water, gas, and fluid delivery systems. These components ensure leak-proof operations and long-term mechanical reliability.',
     longDescriptionAr: 'تم تصميم قطع ومستلزمات السباكة الصناعية وتوصيلات الأنابيب لتلبية أعلى معايير الأداء في أنظمة نقل المياه والغاز والسوائل المختلفة، لضمان منع التسريب ومتانة التشغيل.',
     specificationsEn: [
@@ -1813,7 +1812,6 @@ export const products: Product[] = [
     gradeEn: 'ASTM A36 / S275JR',
     gradeAr: 'ASTM A36 / S275JR',
     image: '/images/products/Fabrication Item.jpeg',
-    priceSAR: 150.00,
     longDescriptionEn: 'Our custom fabrication items are manufactured to high industrial tolerances, offering reliable weldability, tensile strength, and flexibility. Suitable for structural welding support, decorative brackets, and customized building frameworks.',
     longDescriptionAr: 'تُصنع قطع الحديد المخصصة للتصنيع لدينا بمطابقة للمعايير الهندسية، مما يوفر موثوقية عالية في اللحام وقوة شد ممتازة. مناسبة للدعامات الإنشائية، الحوامل الزخرفية، وهياكل المباني المخصصة.',
     specificationsEn: [
