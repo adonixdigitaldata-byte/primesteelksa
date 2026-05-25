@@ -68,8 +68,58 @@ export default function Home() {
   ];
 
   return (
-    <div className="space-y-28 pb-24 overflow-hidden bg-brand-surface">
-      {/* 1. HERO SECTION */}
+    <div className="pb-24 overflow-hidden bg-brand-surface">
+      {/* Promotion Sliding Text Banner */}
+      <div className="w-full bg-[#0b0d14] border-b border-brand-primary/20 py-3 overflow-hidden relative z-30 flex" dir="ltr">
+        <div className="animate-marquee-seamless flex items-center gap-12 pr-12 text-[10px] md:text-xs font-bold uppercase tracking-widest text-brand-muted">
+          {/* Repeating sequence */}
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+          
+          {/* Duplicate of the above sequence for seamless loop */}
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+          <div className="flex items-center gap-4 shrink-0">
+            <span className="text-white">Supply & Fabrication of All Types of Steel Materials</span>
+            <span className="text-brand-primary font-black">•</span>
+            <span className="text-white font-arabic">توريد وتصنيع جميع أنواع المواد الحديدية</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-28">
+        {/* 1. HERO SECTION */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(217,119,6,0.1),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(11,13,20,0.9),transparent_60%)]">
         {/* Subtle grid pattern for technical design feel */}
         <div className="absolute inset-0 bg-hero-pattern opacity-[0.04] z-0"></div>
@@ -412,6 +462,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 }

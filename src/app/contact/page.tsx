@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '../../context/LanguageContext';
-import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle, User } from 'lucide-react';
 
 export default function ContactPage() {
   const { language, t } = useLanguage();
@@ -84,6 +84,16 @@ export default function ContactPage() {
             </p>
 
             <div className="space-y-4 pt-2">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-brand-primary/10 border border-brand-primary/25 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
+                  <User className="w-5 h-5" />
+                </div>
+                <div className="text-xs sm:text-sm">
+                  <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'الرئيس التنفيذي' : 'CEO'}</h4>
+                  <p className="text-brand-muted font-semibold">Abdullah Mohammed Afzal</p>
+                </div>
+              </div>
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-brand-primary/10 border border-brand-primary/25 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
                   <MapPin className="w-5 h-5" />
@@ -251,9 +261,43 @@ export default function ContactPage() {
           <MapPin className="w-5 h-5 text-brand-primary" />
           <h3 className="font-bold text-brand-dark text-sm">{language === 'ar' ? 'الموقع الجغرافي للمقر الرئيسي بجدة' : 'Jeddah Headquarters Geographic Pin'}</h3>
         </div>
+        
+        {/* QR Code Section */}
+        <div className="p-6 bg-brand-surface/40 border-b border-brand-border/60 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center sm:text-left rtl:sm:text-right">
+            <h4 className="font-bold text-brand-dark text-base">
+              {language === 'ar' ? 'مسح رمز الاستجابة السريعة (QR Code)' : 'Scan QR Code'}
+            </h4>
+            <p className="text-xs text-brand-muted max-w-md leading-relaxed">
+              {language === 'ar' 
+                ? 'امسح الرمز ضوئيًا باستخدام كاميرا جوالك لفتح موقعنا مباشرة على خرائط Google وتسهيل الوصول إلينا.'
+                : 'Scan the QR code with your mobile camera to open our location directly in Google Maps for easy navigation.'}
+            </p>
+            <a 
+              href="https://maps.app.goo.gl/zFkbWdTcMyGtscDd7"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-primary hover:text-brand-primary-light transition-colors mt-2"
+            >
+              <span>{language === 'ar' ? 'فتح في خرائط Google' : 'Open in Google Maps'}</span>
+              <span className="rtl:rotate-180">→</span>
+            </a>
+          </div>
+          <div className="shrink-0 bg-white p-3 rounded-2xl border border-brand-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <img 
+              src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FzFkbWdTcMyGtscDd7&color=1a1a1a&bgcolor=ffffff&qzone=1" 
+              alt="Google Maps QR Code"
+              width={150}
+              height={150}
+              loading="lazy"
+              className="w-32 h-32 sm:w-36 sm:h-36 object-contain"
+            />
+          </div>
+        </div>
+
         <div className="h-96 relative">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237638.64795232937!2d39.1005886!3d21.5760608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e79%3A0xb35a3962d3c9f225!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3713.438817694765!2d39.26881407526844!3d21.451291980305825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDI3JzA0LjciTiAzOcKwMTYnMTcuMCJF!5e0!3m2!1sen!2sin!4v1779684074817!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
