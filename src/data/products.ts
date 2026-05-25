@@ -1754,5 +1754,85 @@ export const products: Product[] = [
       'تدعيم أرضيات المصانع والمستودعات، مواقف السيارات، والممرات الخرسانية.',
       'الجدران مسبقة الصنع، صبات الأسقف، الهياكل الاستنادية، وجدران المسابح.'
     ]
+  },
+  {
+    id: 'plumbing-item',
+    sku: 'PS-PLM-P40',
+    nameEn: 'Plumbing item',
+    nameAr: 'مستلزمات سباكة وصرف',
+    categoryEn: 'Pipes & Tubes',
+    categoryAr: 'أنابيب ومواسير حديدية',
+    categorySlug: 'pipes-tubes',
+    descriptionEn: 'High-quality industrial plumbing items and fittings designed for heavy-duty piping systems, offering robust connections and corrosion resistance.',
+    descriptionAr: 'مستلزمات وقطع سباكة صناعية عالية الجودة مصممة لأنظمة الأنابيب الثقيلة، مما يوفر توصيلات قوية ومقاومة ممتازة للتآكل.',
+    specsEn: { Type: 'Plumbing Fitting', Connection: 'Threaded / Welded', Standard: 'Standard Industrial Fitting' },
+    specsAr: { 'النوع': 'مستلزمات سباكة وتوصيل', 'التوصيل': 'مقلوظ / ملحم', 'المواصفة': 'قطع صناعية قياسية' },
+    inStock: true,
+    materialEn: 'Galvanized / Carbon Steel',
+    materialAr: 'حديد مجلفن / حديد كربوني',
+    gradeEn: 'Standard Fitting Grade',
+    gradeAr: 'درجة توصيل قياسية',
+    image: '/images/products/Plumbing item.jpeg',
+    priceSAR: 45.00,
+    longDescriptionEn: 'Our industrial plumbing items and pipe fittings are engineered to meet the highest performance standards in water, gas, and fluid delivery systems. These components ensure leak-proof operations and long-term mechanical reliability.',
+    longDescriptionAr: 'تم تصميم قطع ومستلزمات السباكة الصناعية وتوصيلات الأنابيب لتلبية أعلى معايير الأداء في أنظمة نقل المياه والغاز والسوائل المختلفة، لضمان منع التسريب ومتانة التشغيل.',
+    specificationsEn: [
+      'Material: Galvanized steel or high-grade carbon steel.',
+      'Types: Connectors, elbows, tees, unions, and valves.',
+      'Corrosion Resistance: High resistance against moisture and chemical corrosion.'
+    ],
+    specificationsAr: [
+      'المادة: حديد مجلفن أو حديد كربوني عالي الجودة.',
+      'الأنواع: توصيلات، أكواع، قسامات، شدّ وصل، ومحابس.',
+      'مقاومة التآكل: مقاومة عالية ضد الرطوبة والأكسدة والمواد الكيميائية.'
+    ],
+    applicationsEn: [
+      'Industrial piping networks, water supply systems, and gas transport lines.',
+      'Commercial building utilities, maintenance fittings, and drainage systems.'
+    ],
+    applicationsAr: [
+      'شبكات الأنابيب الصناعية، أنظمة إمداد المياه، وخطوط نقل الغاز.',
+      'المرافق الخدمية للمباني التجارية، أعمال الصيانة، وأنظمة الصرف الصحي.'
+    ]
+  },
+  {
+    id: 'fabrication-item',
+    sku: 'PS-FAB-I41',
+    nameEn: 'Fabrication Item',
+    nameAr: 'قطعة أعمال حدادة وتصنيع',
+    categoryEn: 'Hollow Sections & Bars',
+    categoryAr: 'حديد مفرغ ومبسط',
+    categorySlug: 'hollow-sections',
+    descriptionEn: 'Custom fabrication items and custom-shaped iron bars engineered for structural steel building assemblies, welding frames, and customized architectural works.',
+    descriptionAr: 'قطع حديد مصنعة ومنتجات تصنيع مخصصة للهياكل الحديدية، إطارات اللحام، والأعمال الفنية المعمارية المخصصة.',
+    specsEn: { Type: 'Structural Fabrication Component', Finish: 'Mill Finish / Painted', Customization: 'Available' },
+    specsAr: { 'النوع': 'مكون حديد مصنع', 'التشطيب': 'تشطيب المصنع / مدهون', 'التخصيص': 'متوفر حسب الطلب' },
+    inStock: true,
+    materialEn: 'Mild Steel / Carbon Steel',
+    materialAr: 'حديد مطاوع / حديد كربوني',
+    gradeEn: 'ASTM A36 / S275JR',
+    gradeAr: 'ASTM A36 / S275JR',
+    image: '/images/products/Fabrication Item.jpeg',
+    priceSAR: 150.00,
+    longDescriptionEn: 'Our custom fabrication items are manufactured to high industrial tolerances, offering reliable weldability, tensile strength, and flexibility. Suitable for structural welding support, decorative brackets, and customized building frameworks.',
+    longDescriptionAr: 'تُصنع قطع الحديد المخصصة للتصنيع لدينا بمطابقة للمعايير الهندسية، مما يوفر موثوقية عالية في اللحام وقوة شد ممتازة. مناسبة للدعامات الإنشائية، الحوامل الزخرفية، وهياكل المباني المخصصة.',
+    specificationsEn: [
+      'Material: Low-carbon structural steel with high weldability.',
+      'Surface: Clean mill finish ready for paint, powder coating, or galvanization.',
+      'Grade: ASTM A36 / European standard S275JR.'
+    ],
+    specificationsAr: [
+      'المادة: حديد إنشائي منخفض الكربون يتميز بقابلية عالية للحام.',
+      'السطح: تشطيب مصنع نظيف جاهز للدهان، أو الطلاء الحراري، أو الجلفنة.',
+      'الدرجة: ASTM A36 / المواصفة الأوروبية S275JR.'
+    ],
+    applicationsEn: [
+      'Structural joints, custom steel framing, support brackets, and handrails.',
+      'Welded assemblies, machinery frame construction, and customized architectural fabrications.'
+    ],
+    applicationsAr: [
+      'الوصلات الإنشائية، الإطارات الحديدية المخصصة، دعامات التثبيت، والدرابزينات.',
+      'الهياكل الملحومة، بناء هياكل الآلات، وأعمال الحدادة المعمارية المخصصة.'
+    ]
   }
 ];
