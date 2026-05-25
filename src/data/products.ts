@@ -353,7 +353,7 @@ export const products: Product[] = [
     materialAr: 'ألومنيوم',
     gradeEn: 'AA1050 / AA3003',
     gradeAr: 'AA1050 / AA3003',
-    image: '/images/products/Plain aluminum sheets.webp',
+    image: '/images/products/newalimunin sheet.png',
     priceSAR: 121.75,
     longDescriptionEn: 'Our premium Plain aluminum sheets are industrial-grade panels designed for various applications across construction, automotive, and general manufacturing sectors. Crafted to strict engineering tolerances, these sheets ensure excellent strength-to-weight performance.',
     longDescriptionAr: 'ألواح الألومنيوم السادة الممتازة هي ألواح من الدرجة الصناعية مصممة لتطبيقات مختلفة في قطاعات البناء والسيارات والتصنيع العام، وتضمن أداء قوة إلى وزن رائع.',
