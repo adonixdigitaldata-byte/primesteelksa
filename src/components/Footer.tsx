@@ -93,8 +93,17 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
                 <span>
-                  Obold Ibn Jahash Street<br/>
-                  Jeddah, Saudi Arabia
+                  {language === 'ar' ? (
+                    <>
+                      برج الخياط، الشرفية<br/>
+                      جدة، المملكة العربية السعودية
+                    </>
+                  ) : (
+                    <>
+                      Al Khayyat Tower, Al Sharafeyah<br/>
+                      Jeddah, Saudi Arabia
+                    </>
+                  )}
                 </span>
               </li>
               <li className="flex items-center gap-3">

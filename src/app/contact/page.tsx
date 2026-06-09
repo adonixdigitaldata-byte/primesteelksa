@@ -10,6 +10,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [activeLocation, setActiveLocation] = useState<'hq' | 'branch'>('hq');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -94,13 +95,35 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* Headquarters */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-brand-primary/10 border border-brand-primary/25 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
-                  <MapPin className="w-5 h-5" />
+                  <MapPin className="w-5 h-5 text-brand-primary animate-pulse" />
                 </div>
                 <div className="text-xs sm:text-sm">
-                  <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'العنوان الرئيسي' : 'Headquarters'}</h4>
-                  <p className="text-brand-muted">
+                  <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'المقر الرئيسي' : 'Headquarters'}</h4>
+                  <p className="text-brand-muted font-bold">
+                    {language === 'ar' ? 'برج الخياط' : 'Al Khayyat Tower'}
+                  </p>
+                  <p className="text-brand-muted text-xs mt-0.5">
+                    {language === 'ar'
+                      ? 'G5FJ+GRF، طريق أبو بكر الصديق، الشرفية، جدة 23218، المملكة العربية السعودية'
+                      : 'G5FJ+GRF, Abu Bakr As Siddiq Road, Al Sharafeyah, Jeddah 23218, Saudi Arabia'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Branch Location */}
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-brand-primary/10 border border-brand-primary/25 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
+                  <MapPin className="w-5 h-5 text-brand-primary/70" />
+                </div>
+                <div className="text-xs sm:text-sm">
+                  <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'موقع الفرع' : 'Branch Location'}</h4>
+                  <p className="text-brand-muted font-semibold">
+                    {language === 'ar' ? 'فرع جدة' : 'Jeddah Branch'}
+                  </p>
+                  <p className="text-brand-muted text-xs mt-0.5">
                     {language === 'ar'
                       ? 'شارع أوبولد بن جحش، جدة، المملكة العربية السعودية'
                       : 'Obold Ibn Jahash Street, Jeddah, Saudi Arabia'}
@@ -257,9 +280,41 @@ export default function ContactPage() {
 
       {/* Google Maps embed code location centered in KSA */}
       <section className="bg-brand-surface-mid border border-brand-border/65 rounded-3xl overflow-hidden shadow-card">
-        <div className="p-5 bg-brand-surface/60 border-b border-brand-border/60 flex items-center gap-3">
-          <MapPin className="w-5 h-5 text-brand-primary" />
-          <h3 className="font-bold text-brand-dark text-sm">{language === 'ar' ? 'الموقع الجغرافي للمقر الرئيسي بجدة' : 'Jeddah Headquarters Geographic Pin'}</h3>
+        <div className="p-5 bg-brand-surface/60 border-b border-brand-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <MapPin className="w-5 h-5 text-brand-primary animate-bounce" />
+            <h3 className="font-bold text-brand-dark text-sm">
+              {activeLocation === 'hq'
+                ? (language === 'ar' ? 'الموقع الجغرافي للمقر الرئيسي بجدة (برج الخياط)' : 'Jeddah Headquarters Geographic Pin (Al Khayyat Tower)')
+                : (language === 'ar' ? 'الموقع الجغرافي لفرع جدة' : 'Jeddah Branch Geographic Pin')}
+            </h3>
+          </div>
+          
+          {/* Location Toggle Tabs */}
+          <div className="flex bg-brand-surface-alt/50 border border-brand-border/50 p-1 rounded-xl shrink-0 self-start sm:self-auto">
+            <button
+              type="button"
+              onClick={() => setActiveLocation('hq')}
+              className={`px-4 py-1.5 text-xs font-extrabold rounded-lg transition-all duration-300 ${
+                activeLocation === 'hq'
+                  ? 'bg-brand-primary text-white shadow-sm'
+                  : 'text-brand-muted hover:text-brand-dark'
+              }`}
+            >
+              {language === 'ar' ? 'المقر الرئيسي' : 'Headquarters'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveLocation('branch')}
+              className={`px-4 py-1.5 text-xs font-extrabold rounded-lg transition-all duration-300 ${
+                activeLocation === 'branch'
+                  ? 'bg-brand-primary text-white shadow-sm'
+                  : 'text-brand-muted hover:text-brand-dark'
+              }`}
+            >
+              {language === 'ar' ? 'موقع الفرع' : 'Branch'}
+            </button>
+          </div>
         </div>
         
         {/* QR Code Section */}
@@ -274,7 +329,7 @@ export default function ContactPage() {
                 : 'Scan the QR code with your mobile camera to open our location directly in Google Maps for easy navigation.'}
             </p>
             <a 
-              href="https://maps.app.goo.gl/zFkbWdTcMyGtscDd7"
+              href={activeLocation === 'hq' ? 'https://www.google.com/maps/search/?api=1&query=Al+Khayyat+Tower+Jeddah+Saudi+Arabia' : 'https://maps.app.goo.gl/zFkbWdTcMyGtscDd7'}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-primary hover:text-brand-primary-light transition-colors mt-2"
@@ -285,7 +340,11 @@ export default function ContactPage() {
           </div>
           <div className="shrink-0 bg-white p-3 rounded-2xl border border-brand-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">
             <img 
-              src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FzFkbWdTcMyGtscDd7&color=1a1a1a&bgcolor=ffffff&qzone=1" 
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
+                activeLocation === 'hq' 
+                  ? 'https://www.google.com/maps/search/?api=1&query=Al+Khayyat+Tower+Jeddah+Saudi+Arabia' 
+                  : 'https://maps.app.goo.gl/zFkbWdTcMyGtscDd7'
+              )}&color=1a1a1a&bgcolor=ffffff&qzone=1`} 
               alt="Google Maps QR Code"
               width={150}
               height={150}
@@ -297,13 +356,16 @@ export default function ContactPage() {
 
         <div className="h-96 relative">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3713.438817694765!2d39.26881407526844!3d21.451291980305825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDI3JzA0LjciTiAzOcKwMTYnMTcuMCJF!5e0!3m2!1sen!2sin!4v1779684074817!5m2!1sen!2sin"
+            src={activeLocation === 'hq' 
+              ? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.964169454865!2d39.183786000277706!3d21.522927418344025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cfc696d8a91b%3A0x6464a5f89dbee503!2sAl%20Khayyat%20Tower!5e1!3m2!1sen!2sin!4v1780981082284!5m2!1sen!2sin' 
+              : 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3713.438817694765!2d39.26881407526844!3d21.451291980305825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDI3JzA0LjciTiAzOcKwMTYnMTcuMCJF!5e0!3m2!1sen!2sin!4v1779684074817!5m2!1sen!2sin'
+            }
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen={false}
             loading="lazy"
-            title="PrimeSteelKSA HQ Location"
+            title={activeLocation === 'hq' ? 'PrimeSteelKSA Headquarters Location' : 'PrimeSteelKSA Branch Location'}
             className="grayscale brightness-90 contrast-125"
           />
         </div>
