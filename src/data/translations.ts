@@ -184,7 +184,7 @@ export const translations: { en: TranslationDict; ar: TranslationDict } = {
     contactFormSubmit: 'Submit Request',
     contactSuccess: 'Thank you! Your message has been sent successfully. Our steel sales representatives will contact you shortly.',
     contactDetailsTitle: 'Get in Touch Directly',
-    contactDetailsDesc: 'Visit our regional headquarters or call us for heavy bulk contracts and contract shipping details.',
+    contactDetailsDesc: 'Visit our regional Head Office or call us for heavy bulk contracts and contract shipping details.',
     contactHoursTitle: 'Working Hours',
     contactHoursDesc: 'Sunday – Thursday: 8:00 AM – 5:00 PM (Closed on Friday & Saturday)',
     faqTitle: 'Frequently Asked Questions',

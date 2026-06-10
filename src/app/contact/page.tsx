@@ -95,13 +95,13 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Headquarters */}
+              {/* Head Office */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-brand-primary/10 border border-brand-primary/25 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
                   <MapPin className="w-5 h-5 text-brand-primary animate-pulse" />
                 </div>
                 <div className="text-xs sm:text-sm">
-                  <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'المقر الرئيسي' : 'Headquarters'}</h4>
+                  <h4 className="font-bold text-brand-dark mb-0.5">{language === 'ar' ? 'المقر الرئيسي' : 'Head Office'}</h4>
                   <p className="text-brand-muted font-bold">
                     {language === 'ar' ? 'برج الخياط' : 'Al Khayyat Tower'}
                   </p>
@@ -285,7 +285,7 @@ export default function ContactPage() {
             <MapPin className="w-5 h-5 text-brand-primary animate-bounce" />
             <h3 className="font-bold text-brand-dark text-sm">
               {activeLocation === 'hq'
-                ? (language === 'ar' ? 'الموقع الجغرافي للمقر الرئيسي بجدة (برج الخياط)' : 'Jeddah Headquarters Geographic Pin (Al Khayyat Tower)')
+                ? (language === 'ar' ? 'الموقع الجغرافي للمقر الرئيسي بجدة (برج الخياط)' : 'Jeddah Head Office Geographic Pin (Al Khayyat Tower)')
                 : (language === 'ar' ? 'الموقع الجغرافي لفرع جدة' : 'Jeddah Branch Geographic Pin')}
             </h3>
           </div>
@@ -301,7 +301,7 @@ export default function ContactPage() {
                   : 'text-brand-muted hover:text-brand-dark'
               }`}
             >
-              {language === 'ar' ? 'المقر الرئيسي' : 'Headquarters'}
+              {language === 'ar' ? 'المقر الرئيسي' : 'Head Office'}
             </button>
             <button
               type="button"
@@ -365,7 +365,7 @@ export default function ContactPage() {
             style={{ border: 0 }}
             allowFullScreen={false}
             loading="lazy"
-            title={activeLocation === 'hq' ? 'PrimeSteelKSA Headquarters Location' : 'PrimeSteelKSA Branch Location'}
+            title={activeLocation === 'hq' ? 'PrimeSteelKSA Head Office Location' : 'PrimeSteelKSA Branch Location'}
             className="grayscale brightness-90 contrast-125"
           />
         </div>
