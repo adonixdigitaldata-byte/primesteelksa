@@ -39,7 +39,8 @@ export default function Home() {
       readTimeEn: '5 min read',
       readTimeAr: '٥ دقائق قراءة',
       tagEn: 'Technical Guide',
-      tagAr: 'دليل تقني'
+      tagAr: 'دليل تقني',
+      image: '/blog 1.jpeg'
     },
     {
       id: 'epoxy-coated-rebar-importance',
@@ -51,7 +52,8 @@ export default function Home() {
       readTimeEn: '4 min read',
       readTimeAr: '٤ دقائق قراءة',
       tagEn: 'Construction',
-      tagAr: 'أعمال البناء'
+      tagAr: 'أعمال البناء',
+      image: '/blog 2.jpeg'
     },
     {
       id: 'ksa-steel-market-25-26',
@@ -63,7 +65,8 @@ export default function Home() {
       readTimeEn: '6 min read',
       readTimeAr: '٦ دقائق قراءة',
       tagEn: 'Market Report',
-      tagAr: 'تقرير السوق'
+      tagAr: 'تقرير السوق',
+      image: '/blog 3.jpeg'
     }
   ];
 
@@ -403,6 +406,15 @@ export default function Home() {
               key={art.id}
               className="glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between group"
             >
+              {art.image && (
+                <div className="h-44 overflow-hidden relative border-b border-white/5 flex items-center justify-center">
+                  <img
+                    src={art.image}
+                    alt={language === 'ar' ? art.titleAr : art.titleEn}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              )}
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between text-xs text-brand-muted font-bold">
                   <span className="px-2.5 py-1 rounded bg-brand-surface text-brand-primary uppercase tracking-widest text-[9px]">

@@ -21,7 +21,8 @@ export default function BlogListingPage() {
       readTimeAr: '٥ دقائق قراءة',
       tagEn: 'Technical Guide',
       tagAr: 'دليل تقني',
-      tagSlug: 'technical'
+      tagSlug: 'technical',
+      image: '/blog 1.jpeg'
     },
     {
       id: 'epoxy-coated-rebar-importance',
@@ -34,7 +35,8 @@ export default function BlogListingPage() {
       readTimeAr: '٤ دقائق قراءة',
       tagEn: 'Construction',
       tagAr: 'أعمال البناء',
-      tagSlug: 'construction'
+      tagSlug: 'construction',
+      image: '/blog 2.jpeg'
     },
     {
       id: 'ksa-steel-market-25-26',
@@ -47,7 +49,8 @@ export default function BlogListingPage() {
       readTimeAr: '٦ دقائق قراءة',
       tagEn: 'Market Report',
       tagAr: 'تقرير السوق',
-      tagSlug: 'market'
+      tagSlug: 'market',
+      image: '/blog 3.jpeg'
     }
   ];
 
@@ -104,11 +107,21 @@ export default function BlogListingPage() {
               key={art.id}
               className="bg-brand-surface-mid border border-brand-border/75 rounded-2xl overflow-hidden hover:border-brand-primary/40 hover:shadow-glow flex flex-col justify-between transition-all duration-300 shadow-card group"
             >
-              {/* Cover placeholder graphic */}
-              <div className="h-48 bg-gradient-to-tr from-brand-surface to-brand-surface-mid/40 p-6 relative flex items-center justify-center border-b border-brand-border/60 overflow-hidden">
-                <div className="absolute inset-0 bg-hero-pattern opacity-50 opacity-10"></div>
-                <BookOpen className="w-12 h-12 text-brand-primary/35 group-hover:scale-105 group-hover:text-brand-primary transition-all duration-300" />
-                <div className="absolute top-4 left-4 bg-brand-surface-alt/90 px-2.5 py-1 rounded text-[10px] font-bold text-brand-primary flex items-center gap-1">
+              {/* Cover image / placeholder graphic */}
+              <div className="h-48 bg-gradient-to-tr from-brand-surface to-brand-surface-mid/40 relative flex items-center justify-center border-b border-brand-border/60 overflow-hidden">
+                {art.image ? (
+                  <img
+                    src={art.image}
+                    alt={language === 'ar' ? art.titleAr : art.titleEn}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
+                    <BookOpen className="w-12 h-12 text-brand-primary/35 group-hover:scale-105 group-hover:text-brand-primary transition-all duration-300" />
+                  </>
+                )}
+                <div className="absolute top-4 left-4 bg-brand-surface-alt/90 px-2.5 py-1 rounded text-[10px] font-bold text-brand-primary flex items-center gap-1 z-10">
                   <Tag className="w-3 h-3" />
                   <span>{language === 'ar' ? art.tagAr : art.tagEn}</span>
                 </div>

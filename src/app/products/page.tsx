@@ -62,7 +62,9 @@ function ProductsCatalogContent() {
     const matchesSearch =
       prod.nameEn.toLowerCase().includes(searchQuery.toLowerCase()) ||
       prod.nameAr.includes(searchQuery) ||
-      prod.sku.toLowerCase().includes(searchQuery.toLowerCase());
+      prod.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      prod.categoryEn.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      prod.categoryAr.includes(searchQuery);
 
     const matchesCategory = selectedCategory ? prod.categorySlug === selectedCategory : true;
 

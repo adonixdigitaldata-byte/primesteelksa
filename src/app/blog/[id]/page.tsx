@@ -21,6 +21,7 @@ export default function BlogPostPage() {
       tagAr: 'دليل تقني',
       authorEn: 'Eng. Fahad Al-Mutairi',
       authorAr: 'م. فهد المطيري',
+      image: '/blog 1.jpeg',
       contentEn: `When procuring structural steel beams for large-scale construction frameworks in Saudi Arabia, understanding the specifications is critical to ensuring structural integrity, regulatory compliance, and budget optimization.
 
 ### 1. Understanding JIS G3192 (Japanese Industrial Standards)
@@ -56,6 +57,7 @@ Always verify that the supplied steel carries the **SASO certificate of conformi
       tagAr: 'أعمال البناء',
       authorEn: 'Dr. Tariq Al-Jamil',
       authorAr: 'د. طارق الجميل',
+      image: '/blog 2.jpeg',
       contentEn: `Reinforcing concrete structures in coastal zones—such as Jeddah, Yanbu, Dammam, and Jubail—presents unique electrochemical challenges. High ambient humidity combined with highly saline air and soils accelerates steel oxidation.
 
 ### The Role of Fusion-Bonded Epoxy (FBE)
@@ -81,6 +83,7 @@ National epoxy rebars (SABIC-certified and top-tier local brands) undergo strict
       tagAr: 'تقرير السوق',
       authorEn: 'Al-Riyadh Steel Analysts',
       authorAr: 'محللو الرياض للصلب',
+      image: '/blog 3.jpeg',
       contentEn: `Saudi Arabia’s steel market is undergoing an unprecedented growth phase, heavily propelled by the structural goals of Vision 2030 and massive mega-developments.
 
 ### The Megaproject Demand Spike
@@ -200,6 +203,17 @@ To counter global logistical bottlenecks, Saudi construction contractors are shi
           <h1 className="text-2xl sm:text-4xl font-extrabold text-brand-dark leading-tight">
             {language === 'ar' ? article.titleAr : article.titleEn}
           </h1>
+
+          {/* Banner Image */}
+          {article.image && (
+            <div className="w-full rounded-2xl overflow-hidden relative border border-brand-border/60 bg-brand-surface">
+              <img
+                src={article.image}
+                alt={language === 'ar' ? article.titleAr : article.titleEn}
+                className="w-full h-auto block"
+              />
+            </div>
+          )}
 
           {/* Article Body */}
           <div
